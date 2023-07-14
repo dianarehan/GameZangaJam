@@ -10,7 +10,8 @@ public class gravityabillity : MonoBehaviour
     [SerializeField]  int score;
     [SerializeField] float gravity;
     Rigidbody2D rb;
-    // Start is called before the first frame update
+
+    public float Hp =25f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,6 +33,20 @@ public class gravityabillity : MonoBehaviour
         {
             gravity = 1;
         }
+    }
+    public void TakeDamage(float damage)
+    {
+        Hp -= damage; 
+        if (Hp <= 0f)
+        {
+            Die(); 
+        }
+    }
+
+    void Die()
+    {
+        //we might add some animation or we can respawn maslan mmkn 
+        Destroy(gameObject); 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
