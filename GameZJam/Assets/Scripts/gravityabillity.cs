@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class gravityabillity : MonoBehaviour
 {
-    
+    [SerializeField] Text points;
+    [SerializeField]  int score;
     [SerializeField] float gravity;
     Rigidbody2D rb;
 
@@ -12,6 +15,7 @@ public class gravityabillity : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        points.text = points.text + score;
       
     }
 
@@ -43,5 +47,14 @@ public class gravityabillity : MonoBehaviour
     {
         //we might add some animation or we can respawn maslan mmkn 
         Destroy(gameObject); 
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "collectable")
+        {
+            score++;
+            points.text = points.text + score;
+            Destroy(collision.gameObject);
+        }
     }
 }
