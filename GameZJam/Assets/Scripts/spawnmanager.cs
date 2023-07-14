@@ -22,15 +22,15 @@ public class spawnmanager : MonoBehaviour
     }
     void spawnplatforms()
     {
-        float xposlimit = 0.46f;
-        float xposlimitt = 1.64f;
+        float xposlimit = 3.44f; ;
+        float xposlimitt = -3.26f;
         float randomxpos = (Random.Range(xposlimit, xposlimitt));
         Instantiate(moving_platformprefab, new Vector2(14.63f, randomxpos), transform.rotation);
     }
     void spawnprojectiles()
     {
         float xposlimit = 3.44f;
-        float xposlimitt = 3.44f;
+        float xposlimitt = 3.26f;
         float randomxpos = (Random.Range(xposlimit, xposlimitt));
         Instantiate(projectilesprefab, new Vector2(14.63f, randomxpos), transform.rotation);
     }
@@ -38,7 +38,7 @@ public class spawnmanager : MonoBehaviour
     void spawnapples()
     {
         float xposlimit = 3.44f;
-        float xposlimitt = 3.44f;
+        float xposlimitt = 3.26f;
         float randomxpos = (Random.Range(xposlimit, xposlimitt));
         Instantiate(applesprefab, new Vector2(14.63f, randomxpos), transform.rotation);
     }
