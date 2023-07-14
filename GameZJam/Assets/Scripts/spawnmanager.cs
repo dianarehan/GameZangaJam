@@ -20,7 +20,8 @@ public class spawnmanager : MonoBehaviour
     }
     void spawnobject()
     {
-        Instantiate(moving_platformprefab, new Vector2(14.63f, Random.Range(0.46f, -1.64f)), transform.rotation);
+        float randomxpos = (Random.Range(0.46f, -1.64f));
+        Instantiate(moving_platformprefab, new Vector2(14.63f, randomxpos), transform.rotation);
     }
 
 }
