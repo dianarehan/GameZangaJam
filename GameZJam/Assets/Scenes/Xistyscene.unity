@@ -281,6 +281,7 @@ MonoBehaviour:
   time: 6
   repeatrate: 2
   moving_platformprefab: {fileID: 1742289371673968240, guid: fa5d1061f8ead5048934051f29f6b5c4, type: 3}
+  projectilesprefab: {fileID: 0}
 --- !u!1 &612906102
 GameObject:
   m_ObjectHideFlags: 0
