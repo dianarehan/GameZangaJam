@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class moveleft : MonoBehaviour
 {
+    float xposlimit = -21.59f;
     float speed = 5;
     // Start is called before the first frame update
     void Start()
@@ -15,5 +16,9 @@ public class moveleft : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
+        if (transform.position.x < xposlimit)
+        {
+            Destroy(gameObject);
+        }
     }
 }
