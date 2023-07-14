@@ -10,7 +10,7 @@ public class spawnmanager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("spawnobject", time, repeatrate);
+        InvokeRepeating("spawnplatforms", time, repeatrate);
     }
 
     // Update is called once per frame
@@ -18,7 +18,7 @@ public class spawnmanager : MonoBehaviour
     {
 
     }
-    void spawnobject()
+    void spawnplatforms()
     {
         float xposlimit = 0.46f;
         float xposlimitt = 1.64f;
