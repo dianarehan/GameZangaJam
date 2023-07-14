@@ -1,15 +1,11 @@
 using System.Net;
-using System;
 using System.IO;
-using Unity.Plastic.Newtonsoft.Json;
 using Unity.Plastic.Newtonsoft.Json.Linq;
-using UnityEngine;
 using Unity.Plastic.Newtonsoft.Json;
-using Unity.Plastic.Newtonsoft.Json.Linq;
 
 namespace Layer.Editor
 {
-public class GraphQL
+    public class GraphQL
 {
   private string token;
 

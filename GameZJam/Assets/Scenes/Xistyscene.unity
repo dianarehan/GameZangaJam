@@ -278,6 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2857d3777a4e0b24f8c6501492dbacbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 6
+  repeatrate: 2
+  moving_platformprefab: {fileID: 1742289371673968240, guid: fa5d1061f8ead5048934051f29f6b5c4, type: 3}
 --- !u!1 &612906102
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +589,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 1
 --- !u!212 &1195842683
 SpriteRenderer:
   m_ObjectHideFlags: 0
