@@ -16,9 +16,6 @@ public class backgroundmove : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector2.left * speed * Time.deltaTime);
-        if (transform.position.x = collider2d)
-        {
-
-        }
+       
     }
 }
