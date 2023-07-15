@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1742289371673968243}
   m_Layer: 0
   m_Name: moving_platform
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742289371673968240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.25, y: 0.73, z: 0}
-  m_LocalScale: {x: 4.2130485, y: 1, z: 1}
+  m_LocalPosition: {x: 16.6215, y: 0.4549, z: 0}
+  m_LocalScale: {x: 6.504559, y: 10.1712, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +51,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
@@ -74,8 +74,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 6
+  m_Sprite: {fileID: 1966714363, guid: a98da92010c23454eb39408156836852, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,18 +99,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.00034284592, y: 0.0021138396}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.8, y: 0.06}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8004842, y: 0.057942305}
   m_EdgeRadius: 0
 --- !u!114 &1742289371673968243
 MonoBehaviour:
@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad68b0db80f50c45a5525b80a489808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5

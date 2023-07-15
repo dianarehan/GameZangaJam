@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 
 public class gravityabillity : MonoBehaviour
 {
-    [SerializeField] Text points;
+    [SerializeField] TextMeshProUGUI points;
     [SerializeField]  int score;
     [SerializeField] float gravity;
     Rigidbody2D rb;
 
+    [SerializeField] int scoreValue = 1;
+
+    [SerializeField] Animator animator;
+    [SerializeField] bool isWalking = false;
     public float Hp =25f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        points.text = points.text + score;
+        points.text = score + " "+"/10";
       
     }
 
@@ -33,6 +38,8 @@ public class gravityabillity : MonoBehaviour
         {
             gravity = 1;
         }
+        isWalking = IsPlayerWalking();
+        animator.SetBool("IsWalking", isWalking);
     }
     public void TakeDamage(float damage)
     {
@@ -42,6 +49,24 @@ public class gravityabillity : MonoBehaviour
             Die(); 
         }
     }
+    bool IsPlayerWalking()
+    {
+        float raycastDistance = 0.6f;
+        Vector2 raycastDirection = Vector2.down;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, raycastDirection, raycastDistance);
+
+        if (hit.collider != null && hit.collider.CompareTag("ground"))
+        {
+            Debug.Log("Ground collider detected.");
+            return true;
+        }
+
+        Debug.Log("No ground collider detected.");
+        return false;
+    }
+
+
 
     void Die()
     {
@@ -53,7 +78,7 @@ public class gravityabillity : MonoBehaviour
         if (collision.tag == "collectable")
         {
             score++;
-            points.text = points.text + score;
+            points.text = score + " " + "/10";
             Destroy(collision.gameObject);
         }
     }
