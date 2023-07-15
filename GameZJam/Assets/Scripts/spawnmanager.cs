@@ -55,9 +55,15 @@ public class spawnmanager : MonoBehaviour
     [SerializeField] GameObject moving_platformprefab;
     [SerializeField] GameObject projectilesprefab;
     [SerializeField] GameObject applesprefab;
+    [SerializeField] GameObject trapprefab;
     [SerializeField] int platformCountForApple = 5; // Number of platforms to spawn between each apple
 
+    [SerializeField] int platformCountForTrap = 2; // Number of platforms to spawn between each trap
+    [SerializeField] int frameCountForCollider = 20; // Number of frames to enable/disable the capsule collider
+
     private int platformCount = 0; // Counter for spawned platforms
+    private int frameCounter = 0; // Counter for frames
+
 
     // Start is called before the first frame update
     void Start()
@@ -71,22 +77,7 @@ public class spawnmanager : MonoBehaviour
 
     }
 
-    /* void spawnplatforms()
-     {
-         float xposlimit = 3.44f;
-         float xposlimitt = -3.26f;
-         float randomxpos = Random.Range(xposlimit, xposlimitt);
-         Instantiate(moving_platformprefab, new Vector2(14.63f, randomxpos), Quaternion.identity);
-
-         platformCount++; // Increase the platform counter
-
-         // Check if the platform count reaches the desired number for spawning an apple
-         if (platformCount % platformCountForApple == 0)
-         {
-             // Spawn an apple on the platform
-             Instantiate(applesprefab, new Vector2(14.63f, randomxpos + 1.0f), Quaternion.identity);
-         }
-     }*/
+   
     void spawnplatforms()
     {
         float xposlimit = 3.44f;
@@ -103,6 +94,25 @@ public class spawnmanager : MonoBehaviour
             GameObject apple = Instantiate(applesprefab, platform.transform.position + new Vector3(0f, 1.0f, 0f), Quaternion.identity);
             apple.transform.SetParent(platform.transform);
         }
+        if (platformCount % platformCountForTrap == 0)
+        {
+            // Spawn a trap on the platform
+            GameObject trap = Instantiate(trapprefab, platform.transform.position + new Vector3(Random.Range(-2.0f, 2f), 1.0f, 0f), Quaternion.identity);
+            trap.transform.SetParent(platform.transform);
+        }
+
+        // Enable/disable the capsule collider every frameCountForCollider frames
+        frameCounter++;
+        if (frameCounter % frameCountForCollider == 0)
+        {
+            Collider2D capsuleCollider = platform.GetComponentInChildren<CapsuleCollider2D>();
+            if (capsuleCollider != null)
+            {
+                capsuleCollider.enabled = !capsuleCollider.enabled;
+            }
+        }
+
     }
 
 }
+

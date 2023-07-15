@@ -6,6 +6,8 @@ TagManager:
   tags:
   - collectable
   - ground
+  - trap
+  - ceiling
   layers:
   - Default
   - TransparentFX
