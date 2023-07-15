@@ -696,7 +696,6 @@ MonoBehaviour:
   moving_platformprefab: {fileID: 1742289371673968240, guid: fa5d1061f8ead5048934051f29f6b5c4, type: 3}
   projectilesprefab: {fileID: 9218781678729566378, guid: 1046e953c136fc7438b8366a5869de6e, type: 3}
   applesprefab: {fileID: 9179675700680641376, guid: 58c1345b499e5854aa91ee521dfe0f03, type: 3}
-  platformCountForApple: 5
 --- !u!1 &612906102
 GameObject:
   m_ObjectHideFlags: 0
